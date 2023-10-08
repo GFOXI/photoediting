@@ -53,7 +53,7 @@ if __name__ == '__main__':
             print(number, end - start)
             merge_image(zdj2,"Final")
     except FileNotFoundError:
-        print("Zdjęcie jest niepoprawne")
+        print("Zdjęcie jest niepoprawne.")
     except ValueError:
-        print("Musisz podać liczbę całkowitą")
+        print("Musisz podać liczbę całkowitą.")
 
