@@ -56,4 +56,6 @@ if __name__ == '__main__':
         print("Zdjęcie jest niepoprawne.")
     except ValueError:
         print("Musisz podać liczbę całkowitą.")
+    except:
+        print("Error")
 
