@@ -39,7 +39,7 @@ if __name__ == '__main__':
         amount = int(input("Podaj na ile fragmentów podzielić zdjęcie: "))
     except ValueError:
         print("Musisz podać liczbę całkowitą")
-    img = input("Podaj nazwe zdjecia z formatem: ")
+    img = input("Podaj nazwe zdjecia z formatem (np. image.jpg): ")
     try:
         for number in range(1,amount+1):
             zdj = split_image(img, number, "SplittedImg_single")
