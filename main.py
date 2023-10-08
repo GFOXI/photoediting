@@ -36,11 +36,8 @@ def split_image(img, number, save_name):
 
 if __name__ == '__main__':
     try:
-        amount = int(input("Podaj na ile fragmentów podzielić zdjęcie: "))
-    except ValueError:
-        print("Musisz podać liczbę całkowitą")
-    try:
         img = input("Podaj nazwe zdjecia z formatem (np. image.jpg): ")
+        amount = int(input("Podaj na ile fragmentów podzielić zdjęcie: "))
         for number in range(1,amount+1):
             zdj = split_image(img, number, "SplittedImg_single")
             p = []
@@ -57,4 +54,6 @@ if __name__ == '__main__':
             merge_image(zdj2,"Final")
     except FileNotFoundError:
         print("Zdjęcie jest niepoprawne")
+    except ValueError:
+        print("Musisz podać liczbę całkowitą")
 
