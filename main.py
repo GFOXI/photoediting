@@ -35,12 +35,11 @@ def split_image(img, number, save_name):
     return zdjecia
 
 if __name__ == '__main__':
-    img = input("Podaj nazwe zdjecia z formatem: ")
     try:
-        amount = int(input("Podaj na ile fragmentów podzielić: "))
+        amount = int(input("Podaj na ile fragmentów podzielić zdjęcie: "))
     except ValueError:
         print("Musisz podać liczbę całkowitą")
-        exit()
+    img = input("Podaj nazwe zdjecia z formatem: ")
     try:
         for number in range(1,amount+1):
             zdj = split_image(img, number, "SplittedImg_single")
