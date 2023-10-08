@@ -36,17 +36,20 @@ def split_image(img, number, save_name):
 
 if __name__ == '__main__':
     img = input("Podaj nazwe zdjecia z formatem: ")
-    for number in range(1,8):
-        zdj = split_image(img, number, "SplittedImg_single")
-        p = []
-        start = time.time()
-        for i in range(number):
-            p.append(multiprocessing.Process(target=blur_image(zdj[i],
-        "blur_"+zdj[i])))
-            p[i].start()
-        for i in p:
-            i.join()
-        zdj2 = ["blur_"+img for img in zdj]
-        end = time.time()
-        print(number, end - start)
-        merge_image(zdj2,"Final")
+    try:
+        for number in range(1,8):
+            zdj = split_image(img, number, "SplittedImg_single")
+            p = []
+            start = time.time()
+            for i in range(number):
+                p.append(multiprocessing.Process(target=blur_image(zdj[i],
+            "blur_"+zdj[i])))
+                p[i].start()
+            for i in p:
+                i.join()
+            zdj2 = ["blur_"+img for img in zdj]
+            end = time.time()
+            print(number, end - start)
+            merge_image(zdj2,"Final")
+    except:
+        print("Zdjęcie jest niepoprawne")
